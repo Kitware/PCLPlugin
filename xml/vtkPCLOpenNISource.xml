@@ -1,0 +1,30 @@
+<ServerManagerConfiguration>
+  <ProxyGroup name="sources">
+    <SourceProxy name="PCLOpenNISource" class="vtkPCLOpenNISource" label="PCL OpenNI Source">
+      <Documentation
+         short_help="OpenNI point cloud source"
+         long_help="OpenNI point cloud source">
+      </Documentation>
+
+      <Property
+        name="Poll"
+        command="Poll" />
+
+      <Property
+        name="StartGrabber"
+        command="StartGrabber" />
+
+      <Property
+        name="StopGrabber"
+        command="StopGrabber" />
+
+      <IntVectorProperty
+         name="HasNewData"
+         command="HasNewData"
+         information_only="1">
+         <SimpleIntInformationHelper/>
+      </IntVectorProperty>
+
+   </SourceProxy>
+  </ProxyGroup>
+</ServerManagerConfiguration>

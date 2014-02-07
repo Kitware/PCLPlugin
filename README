@@ -1,0 +1,10 @@
+PointCloudLibrary Plugin for ParaView v1.0
+
+The plugin is compatible with:
+
+  ParaView v3.14
+  PCL v1.5.1
+
+For more information, see 
+
+  http://www.paraview.org/Wiki/index.php?title=ParaView/PCL_Plugin

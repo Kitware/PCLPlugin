@@ -1,0 +1,51 @@
+<ServerManagerConfiguration>
+  <ProxyGroup name="filters">
+    <SourceProxy name="PCLEuclideanClusterExtraction" class="vtkPCLEuclideanClusterExtraction" label="PCL Euclidean Cluster Extraction">
+      <Documentation
+         short_help="Apply the PCL Euclidean Cluster Extraction filter to a point cloud."
+         long_help="Apply the PCL Euclidean Cluster Extraction filter to a point cloud.">
+      </Documentation>
+
+      <InputProperty
+         name="Input"
+         port_index="0"
+         command="SetInputConnection">
+        <ProxyGroupDomain name="groups">
+          <Group name="sources"/>
+          <Group name="filters"/>
+        </ProxyGroupDomain>
+        <DataTypeDomain name="input_type">
+          <DataType value="vtkPolyData"/>
+        </DataTypeDomain>
+        <Documentation>
+          Set the input poly data
+        </Documentation>
+      </InputProperty>
+
+    <DoubleVectorProperty
+    name="ClusterTolerance"
+    command="SetClusterTolerance"
+    number_of_elements="1"
+    default_values="0.05">
+    <DoubleRangeDomain name="range" min="0"/>
+    </DoubleVectorProperty>
+
+    <IntVectorProperty
+    name="MinClusterSize"
+    command="SetMinClusterSize"
+    number_of_elements="1"
+    default_values="100">
+    <IntRangeDomain name="range" min="0"/>
+    </IntVectorProperty>
+
+    <IntVectorProperty
+    name="MaxClusterSize"
+    command="SetMaxClusterSize"
+    number_of_elements="1"
+    default_values="100000">
+    <IntRangeDomain name="range" min="0"/>
+    </IntVectorProperty>
+
+   </SourceProxy>
+  </ProxyGroup>
+</ServerManagerConfiguration>

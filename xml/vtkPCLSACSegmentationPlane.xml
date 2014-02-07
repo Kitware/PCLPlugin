@@ -1,0 +1,69 @@
+<ServerManagerConfiguration>
+  <ProxyGroup name="filters">
+    <SourceProxy name="PCLSACSegmentationPlane" class="vtkPCLSACSegmentationPlane" label="PCL SAC Segmentation Plane">
+      <Documentation
+         short_help="Apply the PCL SAC Segmentation filter with a plane model."
+         long_help="Apply the PCL SAC Segmentation filter with a plane model.">
+      </Documentation>
+
+      <InputProperty
+         name="Input"
+         port_index="0"
+         command="SetInputConnection">
+        <ProxyGroupDomain name="groups">
+          <Group name="sources"/>
+          <Group name="filters"/>
+        </ProxyGroupDomain>
+        <DataTypeDomain name="input_type">
+          <DataType value="vtkPolyData"/>
+        </DataTypeDomain>
+        <Documentation>
+          Set the input poly data
+        </Documentation>
+      </InputProperty>
+
+
+    <DoubleVectorProperty
+    name="DistanceThreshold"
+    command="SetDistanceThreshold"
+    number_of_elements="1"
+    default_values="0.05">
+    <DoubleRangeDomain name="range" min="0"/>
+    </DoubleVectorProperty>
+
+    <IntVectorProperty
+    name="MaxIterations"
+    command="SetMaxIterations"
+    number_of_elements="1"
+    default_values="200">
+    <IntRangeDomain name="range" min="1"/>
+    </IntVectorProperty>
+
+
+    <IntVectorProperty
+    name="PerpendicularConstraintEnabled"
+    command="SetPerpendicularConstraintEnabled"
+    number_of_elements="1"
+    default_values="0">
+    <BooleanDomain name="bool"/>
+    </IntVectorProperty>
+
+    <DoubleVectorProperty
+    name="AngleEpsilon"
+    command="SetAngleEpsilon"
+    number_of_elements="1"
+    default_values="0.2">
+    <DoubleRangeDomain name="range" min="0"/>
+    </DoubleVectorProperty>
+
+    <DoubleVectorProperty
+    name="PerpendicularAxis"
+    command="SetPerpendicularAxis"
+    number_of_elements="3"
+    default_values="1.0 0.0 0.0">
+    <DoubleRangeDomain name="range" min="0.0" max="1.0"/>
+    </DoubleVectorProperty>
+
+   </SourceProxy>
+  </ProxyGroup>
+</ServerManagerConfiguration>

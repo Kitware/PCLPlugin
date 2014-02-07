@@ -1,0 +1,67 @@
+<ServerManagerConfiguration>
+  <ProxyGroup name="filters">
+    <SourceProxy name="PCLSACSegmentationCylinder" class="vtkPCLSACSegmentationCylinder" label="PCL SAC Segmentation Cylinder">
+      <Documentation
+         short_help="Apply the PCL SAC Segmentation filter with a cylinder model."
+         long_help="Apply the PCL SAC Segmentation filter with a cylinder model.">
+      </Documentation>
+
+      <InputProperty
+         name="Input"
+         port_index="0"
+         command="SetInputConnection">
+        <ProxyGroupDomain name="groups">
+          <Group name="sources"/>
+          <Group name="filters"/>
+        </ProxyGroupDomain>
+        <DataTypeDomain name="input_type">
+          <DataType value="vtkPolyData"/>
+        </DataTypeDomain>
+        <Documentation>
+          Set the input poly data
+        </Documentation>
+      </InputProperty>
+
+    <DoubleVectorProperty
+    name="SearchRadius"
+    command="SetSearchRadius"
+    number_of_elements="1"
+    default_values="0.3">
+    <DoubleRangeDomain name="range" min="0"/>
+    </DoubleVectorProperty>
+
+    <DoubleVectorProperty
+    name="NormalDistanceWeight"
+    command="SetNormalDistanceWeight"
+    number_of_elements="1"
+    default_values="0.05">
+    <DoubleRangeDomain name="range" min="0"/>
+    </DoubleVectorProperty>
+
+    <DoubleVectorProperty
+    name="RadiusLimit"
+    command="SetRadiusLimit"
+    number_of_elements="1"
+    default_values="0.05">
+    <DoubleRangeDomain name="range" min="0"/>
+    </DoubleVectorProperty>
+
+    <DoubleVectorProperty
+    name="DistanceThreshold"
+    command="SetDistanceThreshold"
+    number_of_elements="1"
+    default_values="0.05">
+    <DoubleRangeDomain name="range" min="0"/>
+    </DoubleVectorProperty>
+
+    <IntVectorProperty
+    name="MaxIterations"
+    command="SetMaxIterations"
+    number_of_elements="1"
+    default_values="200">
+    <IntRangeDomain name="range" min="1"/>
+    </IntVectorProperty>
+
+   </SourceProxy>
+  </ProxyGroup>
+</ServerManagerConfiguration>

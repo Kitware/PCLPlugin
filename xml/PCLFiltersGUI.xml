@@ -1,0 +1,10 @@
+<ParaViewFilters>
+  <Category name="PCL" menu_label="&amp;Point Cloud Library">
+    <Filter name="PCLEuclideanClusterExtraction" />
+    <Filter name="PCLNormalEstimation" />
+    <Filter name="PCLRadiusOutlierRemoval" />
+    <Filter name="PCLSACSegmentationCylinder" />
+    <Filter name="PCLSACSegmentationPlane" />
+    <Filter name="PCLVoxelGrid" />
+  </Category>
+</ParaViewFilters>

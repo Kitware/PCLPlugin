@@ -1,0 +1,67 @@
+<ServerManagerConfiguration>
+
+  <!-- ================================================================ -->
+  <!-- Filters                                                          -->
+  <!-- ================================================================ -->
+  <ProxyGroup name="filters">
+
+    <!-- ================================================================ -->
+    <!-- Representation of a BSP Tree for particles                       -->
+    <!-- ================================================================ -->
+    <SourceProxy
+      name="ParticlePartitionFilter"
+      class="vtkParticlePartitionFilter">
+      <Documentation
+         short_help="Re-Partitioning of Particle Datasets in parallel">
+      </Documentation>
+
+      <InputProperty
+        name="Input"
+        command="SetInputConnection">
+        <ProxyGroupDomain name="groups">
+          <Group name="sources"/>
+          <Group name="filters"/>
+        </ProxyGroupDomain>
+        <DataTypeDomain name="input_type">
+          <DataType value="vtkPointSet"/>
+        </DataTypeDomain>
+        <InputArrayDomain name="input_array" optional="1"/>
+      </InputProperty>
+
+      <StringVectorProperty
+        name="IdChannelArray"
+        command="SetIdChannelArray"
+        number_of_elements="1"
+        animateable="0"
+        default_values="Ids"
+        label="Global IDs for particles">
+        <ArrayListDomain
+          name="array_list"
+          attribute_type="Scalars"
+          none_string="Not available"
+          input_domain_name="input_array">
+          <!--
+          <RequiredProperties>
+            <Property name="Input" function="Input"/>
+          </RequiredProperties>
+          -->
+        </ArrayListDomain>
+        <Documentation>
+          This property indicates the name of the array to be used for Ids
+        </Documentation>
+      </StringVectorProperty>
+
+      <DoubleVectorProperty
+        name="GhostCellOverlap"
+        command="SetGhostCellOverlap"
+        label="Maximum distance required for ghost regions (largest kernel radius)"
+        number_of_elements="1"
+        animateable="0"
+        default_values="0.01" >
+      </DoubleVectorProperty>
+
+    </SourceProxy>
+
+  </ProxyGroup>
+
+</ServerManagerConfiguration>

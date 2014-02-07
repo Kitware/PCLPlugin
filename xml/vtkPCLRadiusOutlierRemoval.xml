@@ -1,0 +1,43 @@
+<ServerManagerConfiguration>
+  <ProxyGroup name="filters">
+    <SourceProxy name="PCLRadiusOutlierRemoval" class="vtkPCLRadiusOutlierRemoval" label="PCL Radius Outlier Removal">
+      <Documentation
+         short_help="Apply the PCL Radius Outlier Removal filter to a point cloud."
+         long_help="Apply the PCL Radius Outlier Removal filter to a point cloud.">
+      </Documentation>
+
+      <InputProperty
+         name="Input"
+         port_index="0"
+         command="SetInputConnection">
+        <ProxyGroupDomain name="groups">
+          <Group name="sources"/>
+          <Group name="filters"/>
+        </ProxyGroupDomain>
+        <DataTypeDomain name="input_type">
+          <DataType value="vtkPolyData"/>
+        </DataTypeDomain>
+        <Documentation>
+          Set the input poly data
+        </Documentation>
+      </InputProperty>
+
+    <DoubleVectorProperty
+    name="SearchRadius"
+    command="SetSearchRadius"
+    number_of_elements="1"
+    default_values="0.3">
+    <DoubleRangeDomain name="range" min="0"/>
+    </DoubleVectorProperty>
+
+    <IntVectorProperty
+    name="NeighborsInSearchRadius"
+    command="SetNeighborsInSearchRadius"
+    number_of_elements="1"
+    default_values="10">
+    <IntRangeDomain name="range" min="0"/>
+    </IntVectorProperty>
+
+   </SourceProxy>
+  </ProxyGroup>
+</ServerManagerConfiguration>

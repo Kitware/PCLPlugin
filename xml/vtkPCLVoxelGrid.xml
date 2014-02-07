@@ -1,0 +1,35 @@
+<ServerManagerConfiguration>
+  <ProxyGroup name="filters">
+    <SourceProxy name="PCLVoxelGrid" class="vtkPCLVoxelGrid" label="PCL Voxel Grid">
+      <Documentation
+         short_help="Apply the PCL voxel grid filter to a point cloud."
+         long_help="Apply the PCL voxel grid filter to a point cloud.">
+      </Documentation>
+
+      <InputProperty
+         name="Input"
+         port_index="0"
+         command="SetInputConnection">
+        <ProxyGroupDomain name="groups">
+          <Group name="sources"/>
+          <Group name="filters"/>
+        </ProxyGroupDomain>
+        <DataTypeDomain name="input_type">
+          <DataType value="vtkPolyData"/>
+        </DataTypeDomain>
+        <Documentation>
+          Set the input poly data
+        </Documentation>
+      </InputProperty>
+
+      <DoubleVectorProperty
+      name="LeafSize"
+      command="SetLeafSize"
+      number_of_elements="3"
+      default_values="0.01 0.01 0.01">
+      <DoubleRangeDomain name="range" min="0"/>
+      </DoubleVectorProperty>
+
+   </SourceProxy>
+  </ProxyGroup>
+</ServerManagerConfiguration>
