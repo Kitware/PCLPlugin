@@ -9,7 +9,6 @@ endif()
 
 find_package(PCL REQUIRED)
 
-
 include_directories(${VTK_INCLUDE_DIRS})
 include_directories(${VTK_PYTHON_INCLUDE_DIR})
 include_directories(${PCL_INCLUDE_DIRS})

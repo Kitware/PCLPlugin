@@ -105,7 +105,7 @@ public slots:
       }
   }
 
-  bool onAutoRefreshChecked(bool checked)
+  void onAutoRefreshChecked(bool checked)
   {
     if (checked)
       {
