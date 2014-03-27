@@ -123,7 +123,7 @@ int vtkAnnotateOBBs::RequestData(
     {
     vtkNew<vtkThresholdPoints> threshold;
     threshold->ThresholdBetween(i, i);
-    threshold->SetInput(inputCopy);
+    threshold->SetInputData(inputCopy);
     threshold->SetInputArrayToProcess(0, 0, 0, vtkDataObject::FIELD_ASSOCIATION_POINTS, labels->GetName());
     threshold->Update();
     vtkPolyData* labelPoints = threshold->GetOutput();
