@@ -39,11 +39,15 @@ public:
   vtkSetMacro(MaxIteration, int);
   vtkGetMacro(MaxIteration, int);
 
+  vtkSetVector3Macro(InitTranslation, double);
+  vtkGetVector3Macro(InitTranslation, double);
+
 protected:
 
   double StepSize;
   double Resolution;
   int MaxIteration;
+  double InitTranslation[3];
 
   virtual int RequestData(vtkInformation *request,
                           vtkInformationVector **inputVector,

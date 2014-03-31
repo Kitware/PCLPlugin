@@ -88,7 +88,12 @@ int vtkPCLNDTRegistration::RequestData(
   ndt.setInputSource(filtered_cloud);
   ndt.setInputTarget(cloud2);
 
-  Eigen::Matrix4f init = Eigen::Matrix4f::Identity();
+  Eigen::AngleAxisf init_rotation (0.0, Eigen::Vector3f::UnitZ ());
+  Eigen::Translation3f inittranslate(this->InitTranslation[0],
+                                        this->InitTranslation[1],
+                                        this->InitTranslation[2]);
+  Eigen::Matrix4f init = (inittranslate * init_rotation).matrix();
+
   pcl::PointCloud<pcl::PointXYZ>::Ptr output_cloud(new pcl::PointCloud<pcl::PointXYZ>);
   ndt.align(*output_cloud, init);
 

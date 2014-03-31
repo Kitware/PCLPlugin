@@ -68,6 +68,15 @@
       </DoubleVectorProperty>
 
 
+      <DoubleVectorProperty
+      name="InitTranslation"
+      command="SetInitTranslation"
+      number_of_elements="3"
+      default_values="0.0 0.0 0.0">
+      </DoubleVectorProperty>
+
+
+
    </SourceProxy>
   </ProxyGroup>
 </ServerManagerConfiguration>
