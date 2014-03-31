@@ -6,5 +6,6 @@
     <Filter name="PCLSACSegmentationCylinder" />
     <Filter name="PCLSACSegmentationPlane" />
     <Filter name="PCLVoxelGrid" />
+    <Filter name="PCLNDTRegistration" />
   </Category>
 </ParaViewFilters>

@@ -1,0 +1,73 @@
+<ServerManagerConfiguration>
+  <ProxyGroup name="filters">
+    <SourceProxy name="PCLNDTRegistration" class="vtkPCLNDTRegistration" label="PCL NDT Registration">
+      <Documentation
+         short_help="Apply the PCL NDT registration."
+         long_help="Apply the PCL NDT registration.">
+      </Documentation>
+
+      <InputProperty
+         name="SourceCloud"
+         port_index="0"
+         command="SetInputConnection">
+        <ProxyGroupDomain name="groups">
+          <Group name="sources"/>
+          <Group name="filters"/>
+        </ProxyGroupDomain>
+        <DataTypeDomain name="input_type">
+          <DataType value="vtkPolyData"/>
+        </DataTypeDomain>
+        <Documentation>
+          Set the input poly data
+        </Documentation>
+      </InputProperty>
+
+      <InputProperty
+         name="TargetCloud"
+         port_index="1"
+         command="SetInputConnection">
+        <ProxyGroupDomain name="groups">
+          <Group name="sources"/>
+          <Group name="filters"/>
+        </ProxyGroupDomain>
+        <DataTypeDomain name="input_type">
+          <DataType value="vtkPolyData"/>
+        </DataTypeDomain>
+        <Documentation>
+          Set the search cloud poly data
+        </Documentation>
+<!--
+        <Hints>
+          <Optional />
+        </Hints>
+-->
+      </InputProperty>
+
+    <IntVectorProperty
+        name="MaxIteration"
+        command="SetMaxIteration"
+        number_of_elements="1"
+        default_values="35">
+    <IntRangeDomain name="range" min="0" max="200"/>
+    </IntVectorProperty>
+
+      <DoubleVectorProperty
+      name="StepSize"
+      command="SetStepSize"
+      number_of_elements="1"
+      default_values="0.5">
+      <DoubleRangeDomain name="range" min="0"/>
+      </DoubleVectorProperty>
+
+      <DoubleVectorProperty
+      name="Resolution"
+      command="SetResolution"
+      number_of_elements="1"
+      default_values="1.0">
+      <DoubleRangeDomain name="range" min="0"/>
+      </DoubleVectorProperty>
+
+
+   </SourceProxy>
+  </ProxyGroup>
+</ServerManagerConfiguration>

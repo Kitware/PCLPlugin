@@ -42,6 +42,7 @@ list(APPEND servermanager_sources
   vtkAnnotateOBBs.cxx
   vtkPCLConversions.cxx
   vtkPCLEuclideanClusterExtraction.cxx
+  vtkPCLNDTRegistration.cxx
   vtkPCLNormalEstimation.cxx
   vtkPCLOpenNISource.cxx
   vtkPCLRadiusOutlierRemoval.cxx
@@ -55,6 +56,7 @@ list(APPEND servermanager_sources
 list(APPEND servermanager_xml
   xml/vtkAnnotateOBBs.xml
   xml/vtkPCLEuclideanClusterExtraction.xml
+  xml/vtkPCLNDTRegistration.xml
   xml/vtkPCLNormalEstimation.xml
   xml/vtkPCLOpenNISource.xml
   xml/vtkPCLRadiusOutlierRemoval.xml
