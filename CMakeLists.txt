@@ -105,7 +105,7 @@ add_paraview_plugin(${library_name} "1.0"
   )
 
 
-target_link_libraries(${library_name} ${gui_deps} ${server_deps})
+target_link_libraries(${library_name} LINK_PUBLIC ${gui_deps} ${server_deps})
 
 if(VTK_WRAP_PYTHON)
   include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/wrap-python.cmake)
