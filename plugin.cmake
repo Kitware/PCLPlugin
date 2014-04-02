@@ -1,5 +1,5 @@
-message("PLUGIN CALLED")
-
 pv_plugin(vtkPCLFilters
   DESCRIPTION "PCL Filters"
-  AUTOLOAD)
+  AUTOLOAD
+  DEFAULT_ENABLED
+  )
