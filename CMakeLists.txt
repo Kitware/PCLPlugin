@@ -81,7 +81,6 @@ endif()
 
 list(APPEND gui_xml
   xml/PCLFiltersGUI.xml
-  xml/PCLReadersGUI.xml
   )
 
 if(USE_OPENNI)

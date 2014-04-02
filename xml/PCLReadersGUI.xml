@@ -1,5 +1,0 @@
-<ParaViewReaders>
-  <Reader name="PCDReader"
-          extensions="pcd"
-          file_description="pointcloud library files" />
-</ParaViewReaders>
