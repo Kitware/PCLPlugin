@@ -25,8 +25,11 @@ set(servermanager_sources)
 set(servermanager_xml)
 set(server_deps)
 
+# TODO: We really need to know if pcl was configured with openni
+# not just whether it was found
+option(USE_OPENNI "Build OpenNI features" OFF)
 
-if(PARAVIEW_BUILD_QT_GUI)
+if(PARAVIEW_BUILD_QT_GUI AND USE_OPENNI)
   QT4_WRAP_CPP(moc_srcs pqPCLOpenNISource.h)
   ADD_PARAVIEW_OBJECT_PANEL(
     ifaces iface_srcs
@@ -44,7 +47,6 @@ list(APPEND servermanager_sources
   vtkPCLEuclideanClusterExtraction.cxx
   vtkPCLNDTRegistration.cxx
   vtkPCLNormalEstimation.cxx
-  vtkPCLOpenNISource.cxx
   vtkPCLRadiusOutlierRemoval.cxx
   vtkPCDReader.cxx
   vtkPCLSACSegmentationCylinder.cxx
@@ -52,13 +54,17 @@ list(APPEND servermanager_sources
   vtkPCLVoxelGrid.cxx
   )
 
+if(USE_OPENNI)
+list(APPEND servermanager_sources
+  vtkPCLOpenNISource.cxx
+  )
+endif()
 
 list(APPEND servermanager_xml
   xml/vtkAnnotateOBBs.xml
   xml/vtkPCLEuclideanClusterExtraction.xml
   xml/vtkPCLNDTRegistration.xml
   xml/vtkPCLNormalEstimation.xml
-  xml/vtkPCLOpenNISource.xml
   xml/vtkPCLRadiusOutlierRemoval.xml
   xml/vtkPCDReader.xml
   xml/vtkPCLSACSegmentationCylinder.xml
@@ -67,19 +73,27 @@ list(APPEND servermanager_xml
   xml/vtkThresholdPoints.xml
   )
 
+if(USE_OPENNI)
+list(APPEND servermanager_xml
+  xml/vtkPCLOpenNISource.xml
+  )
+endif()
 
 list(APPEND gui_xml
   xml/PCLFiltersGUI.xml
   xml/PCLReadersGUI.xml
-  xml/PCLSourcesGUI.xml
   )
 
+if(USE_OPENNI)
+list(APPEND gui_xml
+  xml/PCLSourcesGUI.xml
+  )
+endif()
 
 list(APPEND server_deps
   ${VTK_LIBRARIES}
   ${PCL_LIBRARIES}
   )
-
 
 set(library_name vtkPCLFilters)
 
