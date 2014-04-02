@@ -108,9 +108,6 @@ add_paraview_plugin(${library_name} "1.0"
 
 target_link_libraries(${library_name} ${gui_deps} ${server_deps})
 
-foreach(vl ${VTK_LIBRARIES})
-  message("VTK: " ${vl})
-endforeach()
 if(VTK_WRAP_PYTHON)
   include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/wrap-python.cmake)
   wrap_python(${library_name} "${servermanager_sources}" ${VTK_LIBRARIES})
