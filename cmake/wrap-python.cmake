@@ -22,4 +22,13 @@ function(wrap_python library_name sources)
   if(WIN32 AND NOT CYGWIN)
     set_target_properties(${library_name}Python PROPERTIES SUFFIX ".pyd")
   endif(WIN32 AND NOT CYGWIN)
+
+  SET(VTK_INSTALL_LIB_DIR_CM24 "${PV_INSTALL_LIB_DIR}")
+  SET(VTK_INSTALL_BIN_DIR_CM24 "${PV_INSTALL_BIN_DIR}")
+
+  INSTALL(TARGETS ${library_name}PythonD ${library_name}Python
+    RUNTIME DESTINATION ${VTK_INSTALL_BIN_DIR_CM24} COMPONENT RuntimeLibraries
+    LIBRARY DESTINATION ${VTK_INSTALL_LIB_DIR_CM24} COMPONENT RuntimeLibraries
+    ARCHIVE DESTINATION ${VTK_INSTALL_LIB_DIR_CM24} COMPONENT Development)
+
 endfunction()
