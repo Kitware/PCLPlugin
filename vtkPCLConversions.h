@@ -29,12 +29,14 @@
 #include <pcl/pcl_base.h>
 #include <pcl/PointIndices.h>
 #include <pcl/ModelCoefficients.h>
+#include <vtkPCLFiltersModule.h>
+
 
 class vtkPolyData;
 class vtkCellArray;
 class vtkIntArray;
 
-class vtkPCLConversions : public vtkObject
+class VTKPCLFILTERS_EXPORT vtkPCLConversions : public vtkObject
 {
 public:
         

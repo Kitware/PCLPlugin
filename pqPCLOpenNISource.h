@@ -35,7 +35,8 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 #include <vtkSMSourceProxy.h>
 #include <vtkSMIntVectorProperty.h>
- 
+#include <vtkPCLFiltersModule.h>
+
 #include <QPushButton>
 #include <QVBoxLayout>
 #include <QCheckBox>
@@ -43,7 +44,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <QLabel>
 #include <QTimer>
 
-class pqPCLOpenNISource : public pqObjectPanel
+classp VTKPCLFILTERS_EXPORT qPCLOpenNISource : public pqObjectPanel
 {
 
   Q_OBJECT

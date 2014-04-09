@@ -20,9 +20,10 @@
 #define __vtkPCLEuclideanClusterExtraction_h
 
 #include <vtkPolyDataAlgorithm.h>
+#include <vtkPCLFiltersModule.h>
 
 
-class vtkPCLEuclideanClusterExtraction : public vtkPolyDataAlgorithm
+class VTKPCLFILTERS_EXPORT vtkPCLEuclideanClusterExtraction : public vtkPolyDataAlgorithm
 {
 public:
   vtkTypeMacro(vtkPCLEuclideanClusterExtraction, vtkPolyDataAlgorithm);

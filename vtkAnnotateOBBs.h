@@ -18,11 +18,11 @@
 
 #ifndef __vtkAnnotateOBBs_h
 #define __vtkAnnotateOBBs_h
-
+#include <vtkPCLFiltersModule.h>
 #include <vtkPolyDataAlgorithm.h>
 
 
-class vtkAnnotateOBBs : public vtkPolyDataAlgorithm
+class VTKPCLFILTERS_EXPORT vtkAnnotateOBBs : public vtkPolyDataAlgorithm
 {
 public:
   vtkTypeMacro(vtkAnnotateOBBs, vtkPolyDataAlgorithm);

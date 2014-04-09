@@ -20,9 +20,9 @@
 #define __vtkPCDReader_h
 
 #include <vtkPolyDataAlgorithm.h>
+#include <vtkPCLFiltersModule.h>
 
-
-class vtkPCDReader : public vtkPolyDataAlgorithm
+class VTKPCLFILTERS_EXPORT vtkPCDReader : public vtkPolyDataAlgorithm
 {
 public:
   vtkTypeMacro(vtkPCDReader, vtkPolyDataAlgorithm);

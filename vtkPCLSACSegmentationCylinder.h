@@ -20,9 +20,9 @@
 #define __vtkPCLSACSegmentationCylinder_h
 
 #include <vtkPolyDataAlgorithm.h>
+#include <vtkPCLFiltersModule.h>
 
-
-class vtkPCLSACSegmentationCylinder : public vtkPolyDataAlgorithm
+class VTKPCLFILTERS_EXPORT vtkPCLSACSegmentationCylinder : public vtkPolyDataAlgorithm
 {
 public:
   vtkTypeMacro(vtkPCLSACSegmentationCylinder, vtkPolyDataAlgorithm);

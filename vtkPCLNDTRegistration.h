@@ -20,9 +20,10 @@
 #define __vtkPCLNDTRegistration_h
 
 #include <vtkPolyDataAlgorithm.h>
+#include <vtkPCLFiltersModule.h>
 
 
-class vtkPCLNDTRegistration : public vtkPolyDataAlgorithm
+class VTKPCLFILTERS_EXPORT vtkPCLNDTRegistration : public vtkPolyDataAlgorithm
 {
 public:
   vtkTypeMacro(vtkPCLNDTRegistration, vtkPolyDataAlgorithm);

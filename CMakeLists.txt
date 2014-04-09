@@ -6,7 +6,6 @@ if(NOT ParaView_SOURCE_DIR)
   find_package(PythonLibs REQUIRED)
 endif()
 
-
 find_package(PCL REQUIRED)
 
 include_directories(${VTK_INCLUDE_DIRS})
@@ -95,6 +94,7 @@ list(APPEND server_deps
   )
 
 set(library_name vtkPCLFilters)
+include(GenerateExportHeader)
 
 add_paraview_plugin(${library_name} "1.0"
   GUI_INTERFACES ${gui_interfaces}
@@ -103,6 +103,7 @@ add_paraview_plugin(${library_name} "1.0"
   SERVER_MANAGER_XML ${servermanager_xml}
   SERVER_MANAGER_SOURCES ${servermanager_sources}
   )
+generate_export_header(${library_name} EXPORT_FILE_NAME ${library_name}Module.h)
 
 
 target_link_libraries(${library_name} LINK_PUBLIC ${gui_deps} ${server_deps})
