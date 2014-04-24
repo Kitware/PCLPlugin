@@ -44,7 +44,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <QLabel>
 #include <QTimer>
 
-classp VTKPCLFILTERS_EXPORT qPCLOpenNISource : public pqObjectPanel
+class VTKPCLFILTERS_EXPORT pqPCLOpenNISource : public pqObjectPanel
 {
 
   Q_OBJECT
